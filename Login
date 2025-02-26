@@ -1,0 +1,117 @@
+from tkinter import*
+from tkinter import messagebox
+
+top=Tk()#to create the application
+top.title("New Application")
+top.geometry("1200x700")
+top.config(bg="#ec7263")#htmal colors
+top.resizable(False,False)
+a=Label(top,text="Hey!!Welcome USER",
+        font=("Century",40,"bold"),
+        bg="#ec7263",fg="black")
+a.place(x=300,y=100)
+def sign_error():
+    if(user.get()=="" or pas.get()=="" or no.get()==""):
+        messagebox.showerror("Error","enter all Details")
+    else:
+        admin_db()
+    
+    
+def login_db():
+    if(a3.get()=="" or a5.get()==""):
+        messagebox.showerror("Error","enter all Details")
+    else:
+        print("Username :",a3.get())
+        print("Password :",a5.get())   
+def sign_db():
+    global pas,no,user
+    
+    s2=Frame(top,height=700,width=1200,bg="#c9c3bb")
+    s2.place(x=0,y=0)
+    
+    a1=Label(s2,text="SignUp Page",
+        font=("Century",40,"bold"),
+        bg="#c9c3bb",fg="Black")
+    a1.place(x=400,y=100)
+    
+    
+    a2=Label(s2,text="UserName ",
+        font=("Century",25,"bold"),
+        bg="#c9c3bb",fg="White")
+    a2.place(x=390,y=250)
+    user=Entry(s2,width=15,
+        font=("Century",25,"bold"))
+    user.place(x=600,y=250)
+    
+    
+    a7=Label(s2,text="Mobile Number ",
+        font=("Century",25,"bold"),
+        bg="#c9c3bb",fg="White")
+    a7.place(x=340,y=350)
+    no=Entry(s2,width=15,
+        font=("Century",25,"bold"))
+    no.place(x=600,y=350)
+    
+    
+    a4=Label(s2,text="Password ",
+        font=("Century",25,"bold"),
+        bg="#c9c3bb",fg="White")
+    a4.place(x=400,y=450)
+    pas=Entry(s2,width=15,show="*",
+        font=("Century",25,"bold"))
+    pas.place(x=600,y=450)
+    
+    
+    a8=Button(s2,text="Sign up",width=8,
+         bd=3,font=("Century",20,"bold"),command=sign_error)
+    a8.place(x=500,y=585)
+    
+    
+def admin_db():
+    global a3,a5
+    s2=Frame(top,height=700,width=1200,bg="gray")
+    s2.place(x=0,y=0)
+    
+    a1=Label(s2,text="Admin Dashboard",
+        font=("Century",40,"bold"),
+        bg="gray",fg="Black")
+    a1.place(x=400,y=100)
+    
+    
+    a2=Label(s2,text="UserName ",
+        font=("Century",25,"bold"),
+        bg="gray",fg="White")
+    a2.place(x=390,y=250)
+    a3=Entry(s2,width=15,
+        font=("Century",25,"bold"))
+    a3.place(x=600,y=250)
+    
+    
+    a4=Label(s2,text="Password ",
+        font=("Century",25,"bold"),
+        bg="gray",fg="White")
+    a4.place(x=400,y=350)
+    a5=Entry(s2,width=15,show="*",
+        font=("Century",25,"bold"))
+    a5.place(x=600,y=350)
+    
+    a6=Button(s2,text="Login",width=8,
+         bd=5,font=("Century",20,"bold"),
+         command=login_db)
+    a6.place(x=500,y=480)
+    
+    
+    a7=Label(s2,text="Dont Have an Account?",
+        font=("Century",18,"bold"),
+        bg="gray",fg="White")
+    a7.place(x=200,y=590)
+    a8=Button(s2,text="Sign up",width=8,
+         bd=3,font=("Century",20,"bold"),command=sign_db)
+    a8.place(x=500,y=585)
+    
+    
+b=Button(top,text="Enter",width=10,
+         bd=5,font=("Century",20,"bold"),
+         command=admin_db)
+b.place(x=500,y=500)
+top.mainloop()#manage the events
